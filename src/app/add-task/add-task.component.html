@@ -1,0 +1,32 @@
+<h2 class="heading">Add Task</h2>
+<div *ngIf="showAddSuccessMessage"style="padding-top: 10px;text-align:center;" class="alert alert-success" role="alert">
+    Task added successfully!
+  </div>
+<div style="padding-top: 10px;">
+    <table class="add-task-table">
+        <tr>
+          <td>
+            <form (submit)="addTask()" class="add-task-form">
+              <div class="form-group">
+                <label>Title:</label>
+                <input type="text" [(ngModel)]="task.title" name="title" required>
+              </div>
+      
+              <div class="form-group">
+                <label>Description:</label>
+                <textarea [(ngModel)]="task.description" name="description" required></textarea>
+              </div>
+      
+              <div class="form-group">
+                <label>Due Date:</label>
+                <input type="date" [(ngModel)]="task.dueDate" name="dueDate" required>
+              </div>
+      
+              <button type="submit" class="submit-button">Add Task</button>
+            </form>
+          </td>
+        </tr>
+      </table>
+</div>
+
+  

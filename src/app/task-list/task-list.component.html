@@ -1,0 +1,68 @@
+<div>
+<h2  class="heading">List of Task</h2>
+<div>
+  <button routerLink="/AddTask"class="action-button">Add Task</button>
+</div>
+
+<div style="padding-top: 10px;">
+  <table class="task-table">
+    <thead>
+      <tr>
+        <th style=" text-align: center;">Id</th>
+        <th style=" text-align: center;">Title</th>
+        <th style=" text-align: center;">Description</th>
+        <th style=" text-align: center;">Due Date</th>
+        <th style=" text-align: center;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td style=" text-align: center;">{{ task.id }}</td>
+        <td style=" text-align: center;">
+          <ng-container *ngIf="editedTaskId !== task.id; else editTitle">
+            {{ task.title }}
+          </ng-container>
+          <ng-template #editTitle>
+            <input type="text" [(ngModel)]="task.title">
+          </ng-template>
+        </td>
+        <td style=" text-align: center;"class="description-column">
+          <ng-container *ngIf="editedTaskId !== task.id; else editDescription">
+            {{ task.description }}
+          </ng-container>
+          <ng-template #editDescription>
+            <textarea [(ngModel)]="task.description"></textarea>
+          </ng-template>
+        </td>
+        <td style=" text-align: center;">
+          <ng-container *ngIf="editedTaskId !== task.id; else editDueDate">
+            {{ task.dueDate }}
+          </ng-container>
+          <ng-template #editDueDate>
+            <input type="date" [(ngModel)]="task.dueDate">
+          </ng-template>
+        </td>
+        <td style=" text-align: center;">
+          <button (click)="markAsCompleted(task)" class="action-button">Mark as Completed</button>
+          <button (click)="goToTaskDetail(task.id)" class="action-button">Show Details</button>
+          <button (click)="deleteTask(task)" class="action-button">Delete</button>
+          <button (click)="toggleEditMode(task.id)" class="action-button">Edit</button>
+      <button *ngIf="editedTaskId === task.id" (click)="saveChanges(task)" class="action-button">Save</button>
+        
+      
+    </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<div *ngIf="showDeleteSuccessMessage" style="padding-top: 10px;text-align: center;"class="alert alert-success" role="alert">
+  Task deleted successfully!
+</div>
+<div *ngIf="showSaveSuccessMessage"style="padding-top: 10px;text-align: center;" class="alert alert-success" role="alert">
+  Changes saved successfully!
+</div>
+<div *ngIf="showSuccessMessage"style="padding-top: 10px;text-align: center;" class="alert alert-success" role="alert">
+  Marked successfully!
+</div>

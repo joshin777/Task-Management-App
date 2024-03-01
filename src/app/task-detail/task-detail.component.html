@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2>Task Detail</h2>
+        <div *ngIf="task">
+          <p><strong>Title:</strong> {{ task.title }}</p>
+          <p><strong>Description:</strong> {{ task.description }}</p>
+          <p><strong>Due Date:</strong> {{ task.dueDate }}</p>
+          <p><strong>Status:</strong> {{ task.completed ? 'Completed' : 'Pending' }}</p>
+        </div>
+        <div *ngIf="!task">
+          <p>No task details available.</p>
+
+          <p>Need to fetch data from Api...................</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,104 @@
+/* Container styles */
+.task-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Table styles */
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-table th, .task-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .task-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .task-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .task-table tr:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Button styles */
+  .action-button {
+    background-color: #217ff1;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #1445e8;
+  }
+  
+  /* Input styles */
+  input[type="text"], textarea, input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .task-table th, .task-table td {
+      padding: 8px;
+    }
+  
+    input[type="text"], textarea, input[type="date"] {
+      padding: 6px;
+    }
+  }
+  .task-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #a4ea6f; /* Light green background color */
+  }
+  
+  /* Table styles */
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #8295f6;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .heading {
+    text-align: center;
+  font-size: 34px; /* Adjust font size as needed */
+  color: #fff; /* Text color */
+  background-color: #007bff; /* Background color */
+  padding: 10px 0; /* Add padding for spacing */
+  border-radius: 5px;
+  }
+  .task-table td.description-column {
+    width: 30%; /* Adjust the width as needed */
+  }
